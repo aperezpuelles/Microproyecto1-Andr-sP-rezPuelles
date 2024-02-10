@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bingo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="titleup">
+        <div class="circulo B"><span>B</span></div>
+        <div class="circulo N"><span>N</span></div>
+        <div class="circulo O"><span>O</span></div>
+      </div>
+      <div class="titledown">
+        <div class="circulo I"><span>I</span></div>
+        <div class="circulo G"><span>G</span></div>
+      </div>
+    </header>
+    <section class="menu">
+      <div class="rectangle">
+        <div class="leaderboards">
+          <button>
+            <div class="mediumr"></div>
+            <div class="smallr"></div>
+            <div class="larger"></div>
+          </button>
+        </div>
+        <div class="names">
+          <label class="left up">
+            <div>Jugador 1:</div>
+            <input type="text" onkeyup="habilitarBoton()" />
+          </label>
+          <label class="right up">
+            <div>Jugador 3:</div>
+            <input type="text" onkeyup="habilitarBoton()" />
+          </label>
+          <label class="left down">
+            <div>Jugador 2:</div>
+            <input type="text" onkeyup="habilitarBoton()" />
+          </label>
+          <label class="right down">
+            <div>Jugador 4:</div>
+            <input type="text" onkeyup="habilitarBoton()" />
+          </label>
+        </div>
+        <div class="cardboardsize">
+          <label>
+            <div>Seleccionar tamaño del cartón:</div>
+            <input
+              id="inputsize"
+              type="text"
+              placeholder="3=3x3, 4=4x4, 5=5x5"
+              onkeyup="habilitarBoton()"
+            />
+          </label>
+        </div>
+      </div>
+    </section>
+    <div class="startbutton">
+      <button id="iniciar" disabled onclick="redireccionar(); generarMatriz()">
+        Iniciar juego
+      </button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
