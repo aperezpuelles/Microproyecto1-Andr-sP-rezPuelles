@@ -57,6 +57,14 @@ function generarYMostrarCarton(matriz) {
 }
 
 function guardarTamano() {
+    const j1 = document.getElementById("1").value.trim();
+    const j2 = document.getElementById("2").value.trim();
+    const j3 = document.getElementById("3").value.trim();
+    const j4 = document.getElementById("4").value.trim();
+    localStorage.setItem("j1", j1);
+    localStorage.setItem("j2", j2);
+    localStorage.setItem("j3", j3);
+    localStorage.setItem("j4", j4);
     const size = document.getElementById("inputsize").value.trim();
     const jugadores = [
         { nombre: "Jugador 1", carton: generarMatriz(size) },
@@ -69,7 +77,19 @@ function guardarTamano() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const seleccionarJugador = document.getElementById("seleccionarJugador");
+    const jugador1 = document.getElementById("Jugador 1");
+    const jugador2 = document.getElementById("Jugador 2");
+    const jugador3 = document.getElementById("Jugador 3");
+    const jugador4 = document.getElementById("Jugador 4");
+    const j1 = localStorage.getItem("j1");
+    const j2 = localStorage.getItem("j2");
+    const j3 = localStorage.getItem("j3");
+    const j4 = localStorage.getItem("j4");
     if (seleccionarJugador) {
+        jugador1.textContent = j1;
+        jugador2.textContent = j2;
+        jugador3.textContent = j3;
+        jugador4.textContent = j4;
         seleccionarJugador.addEventListener("change", function() {
             const jugadores = JSON.parse(localStorage.getItem("jugadores"));
             if (jugadores) {
@@ -107,7 +127,6 @@ function calcularPuntos() {
     let puntos = 0;
     const carton = document.getElementById("tablero");
     const size = carton.rows.length;
-
     for (let i = 0; i < size; i++) {
         let marcadasEnFila = true;
         for (let j = 0; j < size; j++) {
@@ -119,7 +138,6 @@ function calcularPuntos() {
         }
         if (marcadasEnFila) puntos++;
     }
-
     for (let i = 0; i < size; i++) {
         let marcadasEnColumna = true;
         for (let j = 0; j < size; j++) {
@@ -131,7 +149,6 @@ function calcularPuntos() {
         }
         if (marcadasEnColumna) puntos++;
     }
-
     let diagonal1Marcada = true;
     let diagonal2Marcada = true;
     for (let i = 0; i < size; i++) {
@@ -145,7 +162,6 @@ function calcularPuntos() {
         }
     }
     if (diagonal1Marcada || diagonal2Marcada) puntos += 2;
-
     let cartonLleno = true;
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
@@ -158,7 +174,6 @@ function calcularPuntos() {
         if (!cartonLleno) break;
     }
     if (cartonLleno) puntos += 5;
-
     const puntosDiv = document.getElementById("puntos");
     puntosDiv.textContent = puntos;
 }
@@ -187,4 +202,3 @@ function descontarTurnos() {
       document.getElementById("sb").disabled = true;
     }
 }
-
