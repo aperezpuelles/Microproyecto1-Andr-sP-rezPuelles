@@ -7,6 +7,39 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <header>
+      <button id="salir" onclick="redireccionar2()">
+        <img src="https://svgsilh.com/svg/2088906.svg" alt="home" />
+      </button>
+      <div class="bola">
+        <div class="circle"><span id="number">0</span></div>
+      </div>
+      <div class="pt">
+        <div id="turnos">25</div>
+      </div>
+    </header>
+    <section class="carton">
+      <select id="seleccionarJugador">
+        <option>Seleccionar jugador</option>
+        <option id="Jugador 1">Jugador 1</option>
+        <option id="Jugador 2">Jugador 2</option>
+        <option id="Jugador 3">Jugador 3</option>
+        <option id="Jugador 4">Jugador 4</option>
+      </select>
+      <div class="rectangulo">
+        <div id="puntos">0</div>
+      </div>
+      <span class="puntaje">Puntaje:</span>
+      <table id="tablero"></table>
+    </section>
+    <div class="ballbutton">
+      <button
+        id="sb"
+        onclick="sacarBola(); descontarTurnos(); calcularPuntos()"
+      >
+        Sacar bola
+      </button>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

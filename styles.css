@@ -1,5 +1,5 @@
 body{
-    background-image: url(https://pbs.twimg.com/media/GD5GiP6W8AAcmly.jpg);
+    background-image: url(https://i.pinimg.com/564x/0c/67/c8/0c67c84067e96aa48f6fb61c90804bfa.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -41,11 +41,11 @@ body{
     transform: translate(85px, 10px);
 }
 
-.circulo{
+.circle{
     width: 150px; 
     height: 150px; 
     border-radius: 50%;
-    background-color: #da5b13;
+    background-color: #012F6A;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +62,7 @@ body{
 }
 
 .rectangle{
-    background-color: #da5b13;
+    background-color: #B5DBEA;
     border-radius: 30px;
     position: absolute;
     width: 766px;
@@ -70,7 +70,7 @@ body{
     margin: 20px;
     margin-top: 25px;
     transform: translate(6px);
-    border: 2px solid black;
+    border: 2px solid #34A0CB;
 }
 
 .names{
@@ -83,7 +83,7 @@ body{
   display: flex;
   flex-direction: column;
   padding: 20px;
-  color: white;
+  color: #34A0CB;
   font-family: sans-serif;
   font-size: 14px;
 }
@@ -121,7 +121,7 @@ input[type="text"] {
 .cardboardsize{
     display: flex;
     justify-content: center;
-    color: white;
+    color: #34A0CB;
     font-family: sans-serif;
     font-size: 14px;
     padding-top: 8px;
@@ -138,6 +138,7 @@ input[type="text"] {
 }
 
 .leaderboards button{
+    background-color: #012F6A;
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -150,7 +151,7 @@ input[type="text"] {
 .mediumr{
     width: 7px;
     height: 18px;
-    background-color: #da5b13;
+    background-color: #B5DBEA;
     transform: translate(2px, 16px);
     border: 1px solid black;
 }
@@ -158,7 +159,7 @@ input[type="text"] {
 .smallr{
     width: 7px;
     height: 14px;
-    background-color: #da5b13;
+    background-color: #B5DBEA;
     transform: translate(13px);
     border: 1px solid black;
 }
@@ -166,7 +167,7 @@ input[type="text"] {
 .larger{
     width: 7px;
     height: 22px;
-    background-color: #da5b13;
+    background-color: #B5DBEA;
     transform: translate(24px, -24px);
     border: 1px solid black;
 }
@@ -179,11 +180,146 @@ input[type="text"] {
 .startbutton button{
     width: 250px;
     height: 45px;
-    background-color: #da5b13;
+    background-color: #1E364E;
     border: 2px solid black;
     color: white;
     font-family: sans-serif;
     font-size: 20px;
     transform: translate(22px, 400px);
     border-radius: 8px;
+}
+
+.ballbutton{
+    display: flex;
+    justify-content: center;
+}
+
+.ballbutton button{
+    width: 250px;
+    height: 45px;
+    background-color: #1E364E;
+    border: 2px solid black;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    transform: translate(0px, 100px);
+    border-radius: 8px;
+}
+
+#salir{
+    margin: 30px;
+    width: 70px;
+    height: 70px;
+    background-color: #1E364E;
+    border: 2px solid black;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+img{
+    width: 100px;
+    transform: translate(-23px, 2px);
+}
+
+.bola{
+    display: flex;
+    justify-content: center;
+    margin-top: -115px;
+}
+
+.pt{
+    display: flex;
+    justify-content: end;
+}
+
+#turnos{
+    width: 100px;
+    height: 88px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 75px;
+    text-align: center;
+    background-color: #012F6A;
+    border-radius: 6px;
+    border: 2px solid black;
+    transform: translate(-30px, -150px);
+}
+
+.carton{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 350px;
+    height: 350px;
+    margin-top: 100px;
+    transform: translate(-240px);
+    background-color: #012F6A;
+    color: #34A0CB;
+    font-size: large;
+    font-family: sans-serif;
+}
+  
+th, td, tr {
+    background-color: #B5DBEA;
+    border: 1px solid #34A0CB;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.marcada{
+    background-color: red;
+}
+
+#seleccionarJugador{
+    background-color: #012F6A;
+    height: 40px;
+    width: 184px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-align: center;
+    color: white; 
+    margin-top: 100px;
+    margin-right: 40px;
+}
+
+.rectangulo{
+    width: 150px;
+    height: 37px;
+    background-color: #012F6A;
+    border-radius: 6px;
+    border: 2px solid black;
+    transform: translate(955px, -130px);
+}
+
+.puntaje{
+    color: white;
+    font-size: 28px;
+    font-family: sans-serif;
+    transform: translate(810px, -125px);
+}
+
+#puntos{
+    color: white;
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+    transform: translate(50px, 2px);
+}
+
+button{
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 90%;
+}
+
+button:active {
+    background-color: cornflowerblue;
 }
