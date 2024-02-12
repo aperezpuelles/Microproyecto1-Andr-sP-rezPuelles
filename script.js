@@ -57,10 +57,10 @@ function generarYMostrarCarton(matriz) {
 }
 
 function guardarTamano() {
-    const j1 = document.getElementById("1").value.trim();
-    const j2 = document.getElementById("2").value.trim();
-    const j3 = document.getElementById("3").value.trim();
-    const j4 = document.getElementById("4").value.trim();
+    const j1 = document.getElementById("j1").value.trim();
+    const j2 = document.getElementById("j2").value.trim();
+    const j3 = document.getElementById("j3").value.trim();
+    const j4 = document.getElementById("j4").value.trim();
     localStorage.setItem("j1", j1);
     localStorage.setItem("j2", j2);
     localStorage.setItem("j3", j3);
@@ -93,11 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
         seleccionarJugador.addEventListener("change", function() {
             const jugadores = JSON.parse(localStorage.getItem("jugadores"));
             if (jugadores) {
-                console.log(jugadores);
                 const opcionSeleccionada = seleccionarJugador.options[seleccionarJugador.selectedIndex].id;
                 for (let i = 0; i < jugadores.length; i++) {
                     if (opcionSeleccionada === jugadores[i].nombre) {
                         generarYMostrarCarton(jugadores[i].carton);
+                        remarcarCelda(numerosMarcados);
                         break;
                     }
                 }
@@ -106,18 +106,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+let numerosMarcados = [];
+
 function marcarCelda(numero) {
+    numerosMarcados.push(numero);
     const tablero = document.getElementById("tablero");
-    const celdasMarcadas = [];
     for (let i = 0; i < tablero.rows.length; i++) {
         const fila = tablero.rows[i];
         for (let j = 0; j < fila.cells.length; j++) {
             const celda = fila.cells[j];
-            const row = i;
-            const col = j;
-            if (parseInt(celda.textContent) === numero && !celdasMarcadas.includes(`${row}-${col}`)) {
+            if (parseInt(celda.textContent) === numero) {
                 celda.classList.add("marcada");
-                celdasMarcadas.push(`${row}-${col}`);
+            }
+        }
+    }
+}
+
+function remarcarCelda(numerosMarcados) {
+    const tablero = document.getElementById("tablero");
+    for (let i = 0; i < tablero.rows.length; i++) {
+        const fila = tablero.rows[i];
+        for (let j = 0; j < fila.cells.length; j++) {
+            const celda = fila.cells[j];
+            if (numerosMarcados.includes(parseInt(celda.textContent))) {
+                celda.classList.add("marcada");
             }
         }
     }
