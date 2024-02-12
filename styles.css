@@ -258,7 +258,7 @@ table {
     margin-top: 100px;
     transform: translate(-240px);
     background-color: #012F6A;
-    color: #34A0CB;
+    color: #012F6A;
     font-size: large;
     font-family: sans-serif;
 }
@@ -270,8 +270,40 @@ th, td, tr {
     border-radius: 6px;
 }
 
+.titlecarton{
+    position: absolute;
+    width: 350px; 
+    height: 70px;
+    background-color: #012F6A;
+    border-radius: 8px;
+    transform: translate(0px, 40px);
+    color: white;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.Btable{
+    transform: translate(30px, 9px);
+}
+
+.Itable{
+    transform: translate(100px, -48px);
+}
+
+.Ntable{
+    transform: translate(153px, -107.5px);
+}
+
+.Gtable{
+    transform: translate(222px, -165.5px);
+}
+
+.Otable{
+    transform: translate(285px, -223.5px);
+}
+
 .marcada{
-    background-color: red;
+    background-color: #6883FF;
 }
 
 #seleccionarJugador{

@@ -19,11 +19,11 @@ function habilitarBoton() {
     const iniciar = document.getElementById('iniciar');
     if (valorinputsize >= 3 && valorinputsize <= 5) {
         if(contador === 5){
-            inputsize.style.backgroundColor = ""
+            inputsize.style.borderColor = ""
             iniciar.disabled = false;
         }
     } else {
-        inputsize.style.backgroundColor = "red";
+        inputsize.style.borderColor = "#F8302A";
         iniciar.disabled = true;
     }
 }
