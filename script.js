@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (opcionSeleccionada === jugadores[i].nombre) {
                         generarYMostrarCarton(jugadores[i].carton);
                         remarcarCelda(numerosMarcados);
+                        calcularPuntos();
                         break;
                     }
                 }
@@ -115,7 +116,7 @@ function marcarCelda(numero) {
         const fila = tablero.rows[i];
         for (let j = 0; j < fila.cells.length; j++) {
             const celda = fila.cells[j];
-            if (parseInt(celda.textContent) === numero) {
+            if (parseInt(celda.textContent) === numero && numerosMarcados.includes(parseInt(celda.textContent))) {
                 celda.classList.add("marcada");
             }
         }
@@ -148,7 +149,9 @@ function calcularPuntos() {
                 break;
             }
         }
-        if (marcadasEnFila) puntos++;
+        if (marcadasEnFila) {
+            puntos++;
+        }
     }
     for (let i = 0; i < size; i++) {
         let marcadasEnColumna = true;
@@ -159,7 +162,9 @@ function calcularPuntos() {
                 break;
             }
         }
-        if (marcadasEnColumna) puntos++;
+        if (marcadasEnColumna){
+            puntos++;
+        }
     }
     let diagonal1Marcada = true;
     let diagonal2Marcada = true;
@@ -173,7 +178,9 @@ function calcularPuntos() {
             diagonal2Marcada = false;
         }
     }
-    if (diagonal1Marcada || diagonal2Marcada) puntos += 2;
+    if (diagonal1Marcada || diagonal2Marcada) {
+        puntos += 2;
+    }
     let cartonLleno = true;
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
@@ -183,9 +190,13 @@ function calcularPuntos() {
                 break;
             }
         }
-        if (!cartonLleno) break;
+        if (!cartonLleno) {
+            break;
+        }
     }
-    if (cartonLleno) puntos += 5;
+    if (cartonLleno) {
+        puntos += 5;
+    }
     const puntosDiv = document.getElementById("puntos");
     puntosDiv.textContent = puntos;
 }
@@ -203,6 +214,7 @@ function sacarBola() {
     number.innerHTML = "";
     number.textContent = numeroAleatorio;
     marcarCelda(numeroAleatorio)
+    calcularPuntos()
 }
 
 function descontarTurnos() {
